@@ -52,7 +52,7 @@ const products = [
     metric: "Multi-fraction",
   },
   {
-    src: "/products/carbon-graphene.svg",
+    src: "/products/carbon-graphene.png",
     title: "Carbon / Graphene Derivatives",
     tagline: "Advanced Materials",
     description:

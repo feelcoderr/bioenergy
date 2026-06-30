@@ -147,7 +147,7 @@ export default function HeroSection() {
         style={{ scale: imgScale, position: "absolute", inset: 0, zIndex: 0 }}
       >
         <Image
-          src="/images/heroimage.png"
+          src="/heroimage.png"
           alt="Verdaez biorefinery facility converting biomass into bioenergy, biochar and carbon products"
           fill
           sizes="100vw"
