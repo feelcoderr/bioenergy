@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F7EE"/>
+      <stop offset="60%" stop-color="#C9EBDA"/>
+      <stop offset="100%" stop-color="#9DD6B9"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#155833"/>
+      <stop offset="100%" stop-color="#0A2C1A"/>
+    </linearGradient>
+    <linearGradient id="factGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A7042"/>
+      <stop offset="100%" stop-color="#0F4226"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" id="radGlow">
+      <stop offset="0%" stop-color="#3DA872" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3DA872" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="radGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3DA872" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3DA872" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1440" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Distant mountains / hills -->
+  <ellipse cx="200" cy="700" rx="320" ry="160" fill="#9DD6B9" opacity="0.4"/>
+  <ellipse cx="650" cy="680" rx="420" ry="200" fill="#74C39A" opacity="0.35"/>
+  <ellipse cx="1100" cy="690" rx="380" ry="180" fill="#6ABF96" opacity="0.3"/>
+  <ellipse cx="1380" cy="710" rx="260" ry="150" fill="#9DD6B9" opacity="0.3"/>
+
+  <!-- Fields / land -->
+  <path d="M0,760 Q360,710 720,730 Q1080,750 1440,720 L1440,900 L0,900 Z" fill="#1A7042" opacity="0.6"/>
+  <path d="M0,790 Q360,755 720,765 Q1080,775 1440,755 L1440,900 L0,900 Z" fill="#155833" opacity="0.8"/>
+  <path d="M0,820 L1440,810 L1440,900 L0,900 Z" fill="#0F4226"/>
+
+  <!-- Sugarcane / grass stalks left -->
+  <g opacity="0.85">
+    <line x1="60" y1="790" x2="55" y2="660" stroke="#1A7042" stroke-width="3"/>
+    <ellipse cx="55" cy="656" rx="18" ry="30" fill="#228B55" transform="rotate(-15 55 656)"/>
+    <line x1="80" y1="795" x2="78" y2="640" stroke="#155833" stroke-width="2.5"/>
+    <ellipse cx="78" cy="636" rx="14" ry="24" fill="#1A7042" transform="rotate(10 78 636)"/>
+    <line x1="100" y1="788" x2="96" y2="670" stroke="#228B55" stroke-width="2"/>
+    <ellipse cx="96" cy="666" rx="12" ry="20" fill="#3DA872" transform="rotate(-8 96 666)"/>
+    <line x1="40" y1="795" x2="38" y2="675" stroke="#1A7042" stroke-width="2"/>
+    <ellipse cx="38" cy="671" rx="10" ry="18" fill="#228B55" transform="rotate(12 38 671)"/>
+    <line x1="120" y1="792" x2="118" y2="695" stroke="#155833" stroke-width="2"/>
+    <ellipse cx="118" cy="691" rx="9" ry="15" fill="#1A7042" transform="rotate(-5 118 691)"/>
+  </g>
+
+  <!-- Sugarcane / grass right -->
+  <g opacity="0.85">
+    <line x1="1340" y1="785" x2="1338" y2="655" stroke="#1A7042" stroke-width="3"/>
+    <ellipse cx="1338" cy="651" rx="18" ry="30" fill="#228B55" transform="rotate(12 1338 651)"/>
+    <line x1="1360" y1="790" x2="1358" y2="645" stroke="#155833" stroke-width="2.5"/>
+    <ellipse cx="1358" cy="641" rx="14" ry="24" fill="#1A7042" transform="rotate(-8 1358 641)"/>
+    <line x1="1380" y1="788" x2="1376" y2="668" stroke="#228B55" stroke-width="2"/>
+    <ellipse cx="1376" cy="664" rx="11" ry="19" fill="#3DA872"/>
+    <line x1="1400" y1="792" x2="1396" y2="680" stroke="#1A7042" stroke-width="2"/>
+    <ellipse cx="1396" cy="676" rx="9" ry="15" fill="#228B55" transform="rotate(15 1396 676)"/>
+    <line x1="1320" y1="790" x2="1316" y2="685" stroke="#155833" stroke-width="2"/>
+    <ellipse cx="1316" cy="681" rx="10" ry="16" fill="#1A7042"/>
+  </g>
+
+  <!-- Main biorefinery building -->
+  <g filter="url(#softglow)">
+    <!-- Main hall -->
+    <rect x="530" y="580" width="380" height="200" rx="6" fill="url(#factGrad)"/>
+    <rect x="530" y="580" width="380" height="8" rx="3" fill="#3DA872" opacity="0.6"/>
+
+    <!-- Roof ridge -->
+    <path d="M520,585 L720,540 L920,585 Z" fill="#155833"/>
+    <path d="M520,585 L720,540 L920,585" fill="none" stroke="#3DA872" stroke-width="2" opacity="0.5"/>
+
+    <!-- Windows -->
+    <rect x="555" y="620" width="50" height="40" rx="4" fill="#74C39A" opacity="0.25"/>
+    <rect x="620" y="620" width="50" height="40" rx="4" fill="#74C39A" opacity="0.25"/>
+    <rect x="685" y="620" width="50" height="40" rx="4" fill="#74C39A" opacity="0.25"/>
+    <rect x="750" y="620" width="50" height="40" rx="4" fill="#74C39A" opacity="0.25"/>
+    <rect x="815" y="620" width="50" height="40" rx="4" fill="#74C39A" opacity="0.25"/>
+
+    <!-- Main door -->
+    <rect x="685" y="700" width="70" height="80" rx="4" fill="#0A2C1A"/>
+    <rect x="687" y="702" width="66" height="76" rx="3" fill="#155833" opacity="0.5"/>
+
+    <!-- Side building -->
+    <rect x="430" y="640" width="120" height="140" rx="4" fill="#155833"/>
+    <rect x="430" y="640" width="120" height="6" fill="#228B55" opacity="0.5"/>
+    <path d="M422,645 L490,610 L558,645 Z" fill="#0F4226"/>
+    <rect x="450" y="680" width="35" height="28" rx="3" fill="#3DA872" opacity="0.2"/>
+    <rect x="500" y="680" width="35" height="28" rx="3" fill="#3DA872" opacity="0.2"/>
+
+    <!-- Processing tower right -->
+    <rect x="910" y="560" width="90" height="220" rx="6" fill="#1A7042"/>
+    <rect x="910" y="560" width="90" height="8" rx="3" fill="#3DA872" opacity="0.6"/>
+    <ellipse cx="955" cy="558" rx="50" ry="14" fill="#228B55"/>
+    <!-- Tower windows -->
+    <rect x="925" y="590" width="25" height="20" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="960" y="590" width="25" height="20" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="925" y="626" width="25" height="20" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="960" y="626" width="25" height="20" rx="3" fill="#74C39A" opacity="0.2"/>
+  </g>
+
+  <!-- Chimneys / smokestacks -->
+  <g>
+    <rect x="620" y="495" width="22" height="90" rx="4" fill="#0F4226"/>
+    <ellipse cx="631" cy="492" rx="14" ry="6" fill="#155833"/>
+    <!-- Steam plumes -->
+    <ellipse cx="631" cy="470" rx="16" ry="20" fill="#C9EBDA" opacity="0.4"/>
+    <ellipse cx="625" cy="448" rx="20" ry="24" fill="#C9EBDA" opacity="0.3"/>
+    <ellipse cx="635" cy="426" rx="18" ry="22" fill="#C9EBDA" opacity="0.2"/>
+
+    <rect x="680" y="505" width="18" height="78" rx="3" fill="#0F4226"/>
+    <ellipse cx="689" cy="502" rx="12" ry="5" fill="#155833"/>
+    <ellipse cx="689" cy="482" rx="14" ry="18" fill="#C9EBDA" opacity="0.35"/>
+    <ellipse cx="684" cy="462" rx="17" ry="20" fill="#C9EBDA" opacity="0.25"/>
+
+    <rect x="840" y="500" width="20" height="82" rx="3" fill="#0F4226"/>
+    <ellipse cx="850" cy="497" rx="13" ry="5" fill="#155833"/>
+    <ellipse cx="850" cy="476" rx="15" ry="19" fill="#C9EBDA" opacity="0.35"/>
+    <ellipse cx="856" cy="454" rx="18" ry="21" fill="#C9EBDA" opacity="0.25"/>
+
+    <!-- Big stack on right tower -->
+    <rect x="942" y="480" width="26" height="82" rx="4" fill="#0A2C1A"/>
+    <ellipse cx="955" cy="477" rx="16" ry="7" fill="#155833"/>
+    <ellipse cx="955" cy="454" rx="20" ry="24" fill="#E8F7EE" opacity="0.4"/>
+    <ellipse cx="948" cy="428" rx="24" ry="28" fill="#E8F7EE" opacity="0.3"/>
+    <ellipse cx="960" cy="402" rx="20" ry="24" fill="#E8F7EE" opacity="0.2"/>
+  </g>
+
+  <!-- Conveyor / pipeline system -->
+  <path d="M430,730 Q500,720 570,700" stroke="#228B55" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M910,700 Q960,690 1010,710" stroke="#228B55" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Solar panels (left) -->
+  <g opacity="0.7">
+    <rect x="200" y="740" width="60" height="35" rx="2" fill="#155833" transform="rotate(-5 230 757)"/>
+    <line x1="210" y1="738" x2="208" y2="777" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="230" y1="737" x2="228" y2="776" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="250" y1="738" x2="248" y2="777" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="202" y1="752" x2="262" y2="750" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="202" y1="764" x2="262" y2="762" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+
+    <rect x="270" y="742" width="60" height="35" rx="2" fill="#155833" transform="rotate(-3 300 759)"/>
+    <line x1="280" y1="740" x2="278" y2="779" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="300" y1="739" x2="298" y2="778" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+    <line x1="320" y1="740" x2="318" y2="779" stroke="#228B55" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Storage silos (right area) -->
+  <g>
+    <rect x="1100" y="680" width="50" height="100" rx="4" fill="#1A7042"/>
+    <ellipse cx="1125" cy="678" rx="28" ry="10" fill="#228B55"/>
+    <rect x="1160" y="695" width="45" height="85" rx="4" fill="#155833"/>
+    <ellipse cx="1182" cy="693" rx="25" ry="9" fill="#1A7042"/>
+    <rect x="1215" y="700" width="40" height="80" rx="4" fill="#0F4226"/>
+    <ellipse cx="1235" cy="698" rx="22" ry="8" fill="#155833"/>
+  </g>
+
+  <!-- Hex molecular network (top right) -->
+  <g opacity="0.12" stroke="#1A7042" stroke-width="1.5" fill="none">
+    <polygon points="1280,80 1310,97 1310,130 1280,147 1250,130 1250,97" />
+    <polygon points="1310,130 1340,147 1340,180 1310,197 1280,180 1280,147" />
+    <polygon points="1250,130 1280,147 1280,180 1250,197 1220,180 1220,147" />
+    <polygon points="1310,63 1340,80 1340,113 1310,130 1280,113 1280,80" />
+    <polygon points="1340,80 1370,97 1370,130 1340,147 1310,130 1310,97" />
+    <line x1="1280" y1="80" x2="1280" y2="147"/>
+    <line x1="1310" y1="97" x2="1310" y2="130"/>
+    <line x1="1340" y1="80" x2="1340" y2="147"/>
+  </g>
+
+  <!-- Leaf pattern top left -->
+  <g opacity="0.1" fill="#1A7042">
+    <path d="M80,60 C60,80 40,120 80,140 C120,160 140,120 120,80 C110,60 90,50 80,60Z"/>
+    <path d="M80,60 L120,80" stroke="#1A7042" stroke-width="2"/>
+    <path d="M130,100 C110,120 90,160 130,180 C170,200 190,160 170,120 C160,100 140,90 130,100Z" transform="rotate(30 130 140)"/>
+  </g>
+
+  <!-- Glow overlay -->
+  <ellipse cx="720" cy="620" rx="300" ry="180" fill="url(#radGlow)" opacity="0.6"/>
+</svg>

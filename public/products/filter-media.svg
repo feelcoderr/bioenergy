@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EEF8F2"/>
+      <stop offset="100%" stop-color="#C9EBDA"/>
+    </linearGradient>
+    <linearGradient id="tubeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3DA872"/>
+      <stop offset="50%" stop-color="#228B55"/>
+      <stop offset="100%" stop-color="#155833"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9DD6B9" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4DB880" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="drop"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0A2C1A" flood-opacity="0.2"/></filter>
+    <clipPath id="tubeClip">
+      <rect x="160" y="60" width="80" height="180" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)" rx="16"/>
+
+  <!-- Water drops (dirty input) -->
+  <g opacity="0.5">
+    <ellipse cx="100" cy="80" rx="8" ry="11" fill="#74C39A"/>
+    <path d="M100,69 Q106,76 100,91 Q94,76 100,69Z" fill="#74C39A"/>
+    <ellipse cx="75" cy="110" rx="7" ry="9" fill="#74C39A" opacity="0.6"/>
+    <path d="M75,101 Q80,107 75,119 Q70,107 75,101Z" fill="#74C39A" opacity="0.6"/>
+    <ellipse cx="115" cy="125" rx="6" ry="8" fill="#74C39A" opacity="0.5"/>
+    <path d="M115,117 Q120,122 115,133 Q110,122 115,117Z" fill="#74C39A" opacity="0.5"/>
+  </g>
+
+  <!-- Filter column -->
+  <g filter="url(#drop)">
+    <!-- Outer cylinder -->
+    <rect x="158" y="55" width="84" height="190" rx="12" fill="#1A7042"/>
+    <!-- Inner column body -->
+    <rect x="162" y="60" width="76" height="180" rx="10" fill="#228B55"/>
+
+    <!-- Filter layers visible through glass effect -->
+    <rect x="162" y="60" width="76" height="45" rx="0" fill="#155833" clip-path="url(#tubeClip)"/>
+    <rect x="162" y="60" width="76" height="3" fill="#3DA872" opacity="0.5"/>
+
+    <!-- Top cap -->
+    <ellipse cx="200" cy="60" rx="42" ry="12" fill="#3DA872"/>
+    <!-- Bottom cap -->
+    <ellipse cx="200" cy="240" rx="42" ry="10" fill="#1A7042"/>
+
+    <!-- Filter media layers (cross-section view) -->
+    <rect x="164" y="105" width="72" height="28" fill="#0F4226" opacity="0.8"/>
+    <text x="200" y="124" text-anchor="middle" font-family="Outfit" font-size="9" fill="#74C39A" font-weight="600">ACTIVATED</text>
+    <rect x="164" y="133" width="72" height="25" fill="#155833" opacity="0.9"/>
+    <text x="200" y="150" text-anchor="middle" font-family="Outfit" font-size="9" fill="#9DD6B9" font-weight="600">BIOCHAR</text>
+    <rect x="164" y="158" width="72" height="22" fill="#1A7042" opacity="0.7"/>
+    <text x="200" y="173" text-anchor="middle" font-family="Outfit" font-size="9" fill="#9DD6B9" font-weight="600">GRAVEL</text>
+    <rect x="164" y="180" width="72" height="20" fill="#228B55" opacity="0.6"/>
+    <text x="200" y="194" text-anchor="middle" font-family="Outfit" font-size="9" fill="#C9EBDA" font-weight="600">SAND</text>
+
+    <!-- Water level (clean) -->
+    <rect x="164" y="200" width="72" height="38" fill="url(#waterGrad)" clip-path="url(#tubeClip)" opacity="0.8"/>
+
+    <!-- Bubbles in water -->
+    <circle cx="180" cy="218" r="3" fill="white" opacity="0.4"/>
+    <circle cx="210" cy="225" r="2" fill="white" opacity="0.3"/>
+    <circle cx="195" cy="210" r="2.5" fill="white" opacity="0.35"/>
+
+    <!-- Input pipe -->
+    <rect x="200" y="28" width="12" height="32" rx="4" fill="#155833"/>
+    <ellipse cx="206" cy="28" rx="8" ry="4" fill="#228B55"/>
+
+    <!-- Output pipe -->
+    <rect x="200" y="240" width="12" height="28" rx="4" fill="#155833"/>
+    <ellipse cx="206" cy="268" rx="8" ry="4" fill="#3DA872"/>
+  </g>
+
+  <!-- Arrows: dirty in, clean out -->
+  <path d="M130,90 L165,90" stroke="#74C39A" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="100" y="86" font-family="Outfit" font-size="10" fill="#228B55" font-weight="600">DIRTY</text>
+  <text x="100" y="98" font-family="Outfit" font-size="10" fill="#228B55">WATER IN</text>
+
+  <path d="M238,265 L280,265" stroke="#1A7042" stroke-width="2.5" fill="none" marker-end="url(#arrowDark)"/>
+  <text x="282" y="262" font-family="Outfit" font-size="10" fill="#155833" font-weight="600">CLEAN</text>
+  <text x="282" y="274" font-family="Outfit" font-size="10" fill="#155833">WATER OUT</text>
+
+  <defs>
+    <marker id="arrowGreen" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6Z" fill="#74C39A"/>
+    </marker>
+    <marker id="arrowDark" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6Z" fill="#155833"/>
+    </marker>
+  </defs>
+
+  <!-- Label -->
+  <rect x="115" y="275" width="170" height="20" rx="10" fill="rgba(21,88,51,0.1)" stroke="rgba(21,88,51,0.18)" stroke-width="1"/>
+  <text x="200" y="290" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="700" fill="#155833">FILTER MEDIA</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#EEF8F2"/>
+      <stop offset="100%" stop-color="#C9EBDA"/>
+    </radialGradient>
+    <radialGradient id="nodeGrad" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#74C39A"/>
+      <stop offset="100%" stop-color="#1A7042"/>
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3DA872" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3DA872" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)" rx="16"/>
+
+  <!-- Background hex pattern -->
+  <g opacity="0.06" stroke="#1A7042" stroke-width="1" fill="none">
+    <polygon points="80,50 110,67 110,100 80,117 50,100 50,67"/>
+    <polygon points="140,50 170,67 170,100 140,117 110,100 110,67"/>
+    <polygon points="200,50 230,67 230,100 200,117 170,100 170,67"/>
+    <polygon points="260,50 290,67 290,100 260,117 230,100 230,67"/>
+    <polygon points="320,50 350,67 350,100 320,117 290,100 290,67"/>
+    <polygon points="110,100 140,117 140,150 110,167 80,150 80,117"/>
+    <polygon points="170,100 200,117 200,150 170,167 140,150 140,117"/>
+    <polygon points="230,100 260,117 260,150 230,167 200,150 200,117"/>
+    <polygon points="290,100 320,117 320,150 290,167 260,150 260,117"/>
+    <polygon points="80,150 110,167 110,200 80,217 50,200 50,167"/>
+    <polygon points="140,150 170,167 170,200 140,217 110,200 110,167"/>
+    <polygon points="200,150 230,167 230,200 200,217 170,200 170,167"/>
+    <polygon points="260,150 290,167 290,200 260,217 230,200 230,167"/>
+    <polygon points="320,150 350,167 350,200 320,217 290,200 290,167"/>
+  </g>
+
+  <!-- Central glowing graphene lattice -->
+  <g filter="url(#glowStrong)">
+    <circle cx="200" cy="150" r="80" fill="url(#centerGlow)"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <!-- Graphene hex lattice - main structure -->
+    <!-- Row 1 -->
+    <line x1="170" y1="100" x2="200" y2="117" stroke="#228B55" stroke-width="2.5"/>
+    <line x1="200" y1="117" x2="230" y2="100" stroke="#228B55" stroke-width="2.5"/>
+    <line x1="170" y1="100" x2="155" y2="72" stroke="#1A7042" stroke-width="2"/>
+    <line x1="230" y1="100" x2="245" y2="72" stroke="#1A7042" stroke-width="2"/>
+    <line x1="155" y1="72" x2="130" y2="88" stroke="#155833" stroke-width="1.5"/>
+    <line x1="245" y1="72" x2="270" y2="88" stroke="#155833" stroke-width="1.5"/>
+
+    <!-- Row 2 -->
+    <line x1="200" y1="117" x2="200" y2="150" stroke="#228B55" stroke-width="2.5"/>
+    <line x1="170" y1="100" x2="140" y2="117" stroke="#1A7042" stroke-width="2"/>
+    <line x1="230" y1="100" x2="260" y2="117" stroke="#1A7042" stroke-width="2"/>
+    <line x1="140" y1="117" x2="170" y2="133" stroke="#155833" stroke-width="2"/>
+    <line x1="260" y1="117" x2="230" y2="133" stroke="#155833" stroke-width="2"/>
+
+    <!-- Row 3 -->
+    <line x1="200" y1="150" x2="170" y2="167" stroke="#228B55" stroke-width="2.5"/>
+    <line x1="200" y1="150" x2="230" y2="167" stroke="#228B55" stroke-width="2.5"/>
+    <line x1="170" y1="133" x2="170" y2="167" stroke="#1A7042" stroke-width="2"/>
+    <line x1="230" y1="133" x2="230" y2="167" stroke="#1A7042" stroke-width="2"/>
+    <line x1="170" y1="167" x2="140" y2="183" stroke="#155833" stroke-width="1.5"/>
+    <line x1="230" y1="167" x2="260" y2="183" stroke="#155833" stroke-width="1.5"/>
+    <line x1="170" y1="167" x2="200" y2="183" stroke="#155833" stroke-width="1.5"/>
+    <line x1="230" y1="167" x2="200" y2="183" stroke="#155833" stroke-width="1.5"/>
+
+    <!-- Outer ring connections -->
+    <line x1="140" y1="117" x2="125" y2="145" stroke="#155833" stroke-width="1.5" opacity="0.6"/>
+    <line x1="260" y1="117" x2="275" y2="145" stroke="#155833" stroke-width="1.5" opacity="0.6"/>
+    <line x1="140" y1="183" x2="125" y2="155" stroke="#155833" stroke-width="1.5" opacity="0.6"/>
+    <line x1="260" y1="183" x2="275" y2="155" stroke="#155833" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Carbon atoms (nodes) -->
+    <circle cx="200" cy="117" r="8" fill="url(#nodeGrad)"/>
+    <circle cx="200" cy="150" r="10" fill="#3DA872"/>
+    <circle cx="200" cy="183" r="8" fill="url(#nodeGrad)"/>
+    <circle cx="170" cy="100" r="7" fill="#228B55"/>
+    <circle cx="230" cy="100" r="7" fill="#228B55"/>
+    <circle cx="170" cy="133" r="7" fill="#228B55"/>
+    <circle cx="230" cy="133" r="7" fill="#228B55"/>
+    <circle cx="170" cy="167" r="7" fill="#228B55"/>
+    <circle cx="230" cy="167" r="7" fill="#228B55"/>
+    <circle cx="140" cy="117" r="6" fill="#1A7042"/>
+    <circle cx="260" cy="117" r="6" fill="#1A7042"/>
+    <circle cx="140" cy="183" r="6" fill="#1A7042"/>
+    <circle cx="260" cy="183" r="6" fill="#1A7042"/>
+    <circle cx="155" cy="72" r="5" fill="#155833"/>
+    <circle cx="245" cy="72" r="5" fill="#155833"/>
+
+    <!-- Center highlight -->
+    <circle cx="200" cy="150" r="5" fill="white" opacity="0.8"/>
+  </g>
+
+  <!-- "C" atom labels on key nodes -->
+  <text x="200" y="154" text-anchor="middle" font-family="Outfit" font-size="8" font-weight="700" fill="white">C</text>
+  <text x="200" y="121" text-anchor="middle" font-family="Outfit" font-size="7" font-weight="700" fill="white">C</text>
+
+  <!-- Energy lightning bolt (advanced material) -->
+  <g transform="translate(318, 80)" opacity="0.7">
+    <path d="M20,0 L5,30 L15,30 L0,60 L20,22 L9,22 Z" fill="#3DA872"/>
+  </g>
+
+  <!-- Label -->
+  <rect x="90" y="258" width="220" height="30" rx="15" fill="rgba(21,88,51,0.1)" stroke="rgba(21,88,51,0.18)" stroke-width="1"/>
+  <text x="200" y="278" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="#155833">CARBON / GRAPHENE</text>
+</svg>

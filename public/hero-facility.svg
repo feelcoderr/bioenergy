@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C9EBDA"/>
+      <stop offset="100%" stop-color="#EEF8F2"/>
+    </linearGradient>
+    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3DA872"/>
+      <stop offset="100%" stop-color="#1A7042"/>
+    </linearGradient>
+    <linearGradient id="buildMain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#228B55"/>
+      <stop offset="100%" stop-color="#0F4226"/>
+    </linearGradient>
+    <linearGradient id="buildSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#155833"/>
+      <stop offset="100%" stop-color="#0A2C1A"/>
+    </linearGradient>
+    <linearGradient id="roofG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3DA872"/>
+      <stop offset="100%" stop-color="#228B55"/>
+    </linearGradient>
+    <linearGradient id="siloG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A7042"/>
+      <stop offset="100%" stop-color="#155833"/>
+    </linearGradient>
+    <linearGradient id="towerG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#228B55"/>
+      <stop offset="100%" stop-color="#0A2C1A"/>
+    </linearGradient>
+    <linearGradient id="panelG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#74C39A"/>
+      <stop offset="100%" stop-color="#1A7042"/>
+    </linearGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3DA872" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#3DA872" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="steamR" cx="50%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#E8F7EE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E8F7EE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0A2C1A" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="sceneClip">
+      <rect x="0" y="0" width="680" height="520" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="680" height="520" fill="url(#skyG)"/>
+
+  <!-- Glow behind facility -->
+  <ellipse cx="340" cy="300" rx="280" ry="180" fill="url(#glowCenter)"/>
+
+  <!-- Rolling hills / landscape -->
+  <ellipse cx="100" cy="430" rx="200" ry="90" fill="#AADCC0" opacity="0.45"/>
+  <ellipse cx="580" cy="440" rx="180" ry="80" fill="#9DD6B9" opacity="0.4"/>
+  <path d="M0,380 Q170,340 340,355 Q510,370 680,350 L680,520 L0,520Z" fill="url(#groundG)"/>
+  <path d="M0,410 Q170,390 340,395 Q510,400 680,385 L680,520 L0,520Z" fill="#155833"/>
+  <path d="M0,445 L680,435 L680,520 L0,520Z" fill="#0F4226"/>
+
+  <!-- === FACILITY GROUP === -->
+  <g filter="url(#softShadow)" clip-path="url(#sceneClip)">
+
+    <!-- ─── LEFT SIDE: Biomass feed conveyor shed ─── -->
+    <!-- Shed base -->
+    <rect x="62" y="295" width="110" height="120" rx="4" fill="#1A7042"/>
+    <!-- Shed roof (pitched) -->
+    <polygon points="55,297 117,260 177,297" fill="#0F4226"/>
+    <line x1="55" y1="297" x2="177" y2="297" stroke="#3DA872" stroke-width="1.5" opacity="0.5"/>
+    <!-- Shed windows -->
+    <rect x="78" y="318" width="28" height="22" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="120" y="318" width="28" height="22" rx="3" fill="#74C39A" opacity="0.2"/>
+    <!-- Door -->
+    <rect x="99" y="360" width="24" height="55" rx="2" fill="#0A2C1A"/>
+
+    <!-- Conveyor belt inclined -->
+    <rect x="160" y="285" width="80" height="14" rx="6" fill="#0F4226" transform="rotate(-18, 160, 292)"/>
+    <rect x="163" y="286" width="74" height="10" rx="4" fill="#228B55" opacity="0.5" transform="rotate(-18, 160, 292)"/>
+    <!-- Conveyor supports -->
+    <line x1="168" y1="296" x2="172" y2="318" stroke="#155833" stroke-width="4" stroke-linecap="round"/>
+    <line x1="210" y1="280" x2="214" y2="302" stroke="#155833" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- ─── MAIN PROCESSING BUILDING ─── -->
+    <!-- Main hall front face -->
+    <rect x="195" y="230" width="230" height="185" rx="6" fill="url(#buildMain)"/>
+    <!-- Side face (3D effect) -->
+    <polygon points="425,230 465,210 465,390 425,415" fill="url(#buildSide)"/>
+    <!-- Roof top face -->
+    <polygon points="195,230 235,210 465,210 425,230" fill="url(#roofG)"/>
+
+    <!-- Main building windows (grid) -->
+    <rect x="210" y="255" width="38" height="30" rx="3" fill="#74C39A" opacity="0.18"/>
+    <rect x="258" y="255" width="38" height="30" rx="3" fill="#74C39A" opacity="0.18"/>
+    <rect x="306" y="255" width="38" height="30" rx="3" fill="#74C39A" opacity="0.18"/>
+    <rect x="354" y="255" width="38" height="30" rx="3" fill="#74C39A" opacity="0.18"/>
+    <rect x="210" y="297" width="38" height="30" rx="3" fill="#74C39A" opacity="0.15"/>
+    <rect x="258" y="297" width="38" height="30" rx="3" fill="#74C39A" opacity="0.15"/>
+    <rect x="306" y="297" width="38" height="30" rx="3" fill="#74C39A" opacity="0.15"/>
+    <rect x="354" y="297" width="38" height="30" rx="3" fill="#74C39A" opacity="0.15"/>
+
+    <!-- Main entrance / dock -->
+    <rect x="275" y="340" width="70" height="75" rx="4" fill="#0A2C1A"/>
+    <rect x="278" y="343" width="64" height="70" rx="3" fill="#0F4226" opacity="0.5"/>
+    <!-- Dock markings -->
+    <line x1="310" y1="343" x2="310" y2="413" stroke="#155833" stroke-width="2" opacity="0.4"/>
+    <line x1="278" y1="375" x2="342" y2="375" stroke="#155833" stroke-width="2" opacity="0.4"/>
+
+    <!-- ─── RIGHT TOWER (Pyrolysis reactor) ─── -->
+    <rect x="470" y="195" width="75" height="220" rx="8" fill="url(#towerG)"/>
+    <!-- Side face -->
+    <polygon points="545,195 570,182 570,408 545,415" fill="#0A2C1A" opacity="0.6"/>
+    <!-- Top cap ellipse -->
+    <ellipse cx="507" cy="193" rx="42" ry="13" fill="#3DA872"/>
+    <!-- Tower windows -->
+    <rect x="484" y="224" width="30" height="22" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="484" y="258" width="30" height="22" rx="3" fill="#74C39A" opacity="0.2"/>
+    <rect x="484" y="292" width="30" height="22" rx="3" fill="#74C39A" opacity="0.18"/>
+    <rect x="484" y="326" width="30" height="22" rx="3" fill="#74C39A" opacity="0.15"/>
+    <!-- Pipe band details -->
+    <rect x="470" y="240" width="75" height="5" rx="2" fill="#228B55" opacity="0.4"/>
+    <rect x="470" y="280" width="75" height="5" rx="2" fill="#228B55" opacity="0.35"/>
+    <rect x="470" y="320" width="75" height="5" rx="2" fill="#228B55" opacity="0.3"/>
+
+    <!-- ─── CHIMNEYS / STACKS ─── -->
+    <!-- Stack 1 -->
+    <rect x="232" y="150" width="20" height="82" rx="5" fill="#0F4226"/>
+    <ellipse cx="242" cy="150" rx="12" ry="5" fill="#155833"/>
+    <!-- Stack 2 -->
+    <rect x="296" y="158" width="18" height="74" rx="4" fill="#0F4226"/>
+    <ellipse cx="305" cy="158" rx="11" ry="4.5" fill="#155833"/>
+    <!-- Stack 3 (tallest) on tower -->
+    <rect x="500" y="120" width="22" height="74" rx="5" fill="#0A2C1A"/>
+    <ellipse cx="511" cy="120" rx="13" ry="5" fill="#155833"/>
+
+    <!-- Steam plumes -->
+    <ellipse cx="242" cy="130" rx="20" ry="26" fill="url(#steamR)" opacity="0.6"/>
+    <ellipse cx="236" cy="106" rx="24" ry="28" fill="url(#steamR)" opacity="0.45"/>
+    <ellipse cx="248" cy="82" rx="18" ry="22" fill="url(#steamR)" opacity="0.3"/>
+
+    <ellipse cx="305" cy="138" rx="18" ry="22" fill="url(#steamR)" opacity="0.55"/>
+    <ellipse cx="299" cy="116" rx="20" ry="24" fill="url(#steamR)" opacity="0.4"/>
+
+    <ellipse cx="511" cy="100" rx="22" ry="28" fill="url(#steamR)" opacity="0.65"/>
+    <ellipse cx="504" cy="74" rx="26" ry="30" fill="url(#steamR)" opacity="0.5"/>
+    <ellipse cx="516" cy="48" rx="20" ry="24" fill="url(#steamR)" opacity="0.35"/>
+
+    <!-- ─── STORAGE SILOS (right) ─── -->
+    <rect x="575" y="300" width="40" height="115" rx="5" fill="url(#siloG)"/>
+    <ellipse cx="595" cy="299" rx="22" ry="8" fill="#3DA872"/>
+    <rect x="612" y="315" width="36" height="100" rx="5" fill="#155833"/>
+    <ellipse cx="630" cy="314" rx="20" ry="7" fill="#228B55"/>
+
+    <!-- ─── SOLAR PANELS (left field) ─── -->
+    <g transform="translate(25, 360)" opacity="0.8">
+      <rect x="0" y="0" width="52" height="28" rx="2" fill="#1A7042" transform="rotate(-6 26 14)"/>
+      <line x1="10" y1="-2" x2="8" y2="28" stroke="#3DA872" stroke-width="0.8" opacity="0.5" transform="rotate(-6 10 14)"/>
+      <line x1="26" y1="-2" x2="24" y2="28" stroke="#3DA872" stroke-width="0.8" opacity="0.5" transform="rotate(-6 26 14)"/>
+      <line x1="42" y1="-2" x2="40" y2="28" stroke="#3DA872" stroke-width="0.8" opacity="0.5" transform="rotate(-6 42 14)"/>
+      <line x1="2" y1="12" x2="52" y2="10" stroke="#3DA872" stroke-width="0.8" opacity="0.5" transform="rotate(-6 26 14)"/>
+      <line x1="2" y1="22" x2="52" y2="20" stroke="#3DA872" stroke-width="0.8" opacity="0.5" transform="rotate(-6 26 14)"/>
+    </g>
+    <g transform="translate(25, 395)" opacity="0.75">
+      <rect x="0" y="0" width="52" height="28" rx="2" fill="#155833" transform="rotate(-6 26 14)"/>
+      <line x1="17" y1="-1" x2="15" y2="27" stroke="#228B55" stroke-width="0.8" opacity="0.5" transform="rotate(-6 17 14)"/>
+      <line x1="35" y1="-1" x2="33" y2="27" stroke="#228B55" stroke-width="0.8" opacity="0.5" transform="rotate(-6 35 14)"/>
+    </g>
+
+    <!-- ─── PIPELINE / CONNECTIONS ─── -->
+    <path d="M172,335 Q200,325 210,325" stroke="#228B55" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M545,310 Q560,308 575,305" stroke="#228B55" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M545,350 Q558,350 575,355" stroke="#228B55" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- ─── FOREGROUND GRASS / FIELD ─── -->
+    <!-- Crop rows in field -->
+    <g opacity="0.5">
+      <line x1="20" y1="468" x2="120" y2="455" stroke="#3DA872" stroke-width="1.5"/>
+      <line x1="20" y1="478" x2="120" y2="465" stroke="#228B55" stroke-width="1"/>
+      <line x1="580" y1="462" x2="660" y2="468" stroke="#3DA872" stroke-width="1.5"/>
+      <line x1="580" y1="472" x2="660" y2="478" stroke="#228B55" stroke-width="1"/>
+    </g>
+
+    <!-- ─── SUGARCANE STALKS left ─── -->
+    <g opacity="0.9">
+      <line x1="38" y1="430" x2="32" y2="340" stroke="#1A7042" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="32" cy="337" rx="14" ry="22" fill="#228B55" transform="rotate(-12,32,337)"/>
+      <line x1="58" y1="435" x2="55" y2="350" stroke="#155833" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="55" cy="347" rx="11" ry="17" fill="#1A7042" transform="rotate(8,55,347)"/>
+      <line x1="76" y1="432" x2="72" y2="360" stroke="#228B55" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="72" cy="357" rx="9" ry="15" fill="#3DA872" transform="rotate(-5,72,357)"/>
+    </g>
+
+    <!-- ─── SUGARCANE STALKS right ─── -->
+    <g opacity="0.9">
+      <line x1="640" y1="428" x2="638" y2="340" stroke="#1A7042" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="638" cy="337" rx="14" ry="22" fill="#228B55" transform="rotate(10,638,337)"/>
+      <line x1="655" y1="432" x2="654" y2="350" stroke="#155833" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="654" cy="347" rx="11" ry="17" fill="#1A7042" transform="rotate(-6,654,347)"/>
+      <line x1="665" y1="430" x2="664" y2="363" stroke="#228B55" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="664" cy="360" rx="9" ry="14" fill="#3DA872" transform="rotate(14,664,360)"/>
+    </g>
+
+    <!-- ─── HEX MOLECULAR NETWORK (top right) ─── -->
+    <g opacity="0.1" stroke="#228B55" stroke-width="1.5" fill="none">
+      <polygon points="598,52 620,65 620,90 598,103 576,90 576,65"/>
+      <polygon points="620,90 642,103 642,128 620,141 598,128 598,103"/>
+      <polygon points="576,90 598,103 598,128 576,141 554,128 554,103"/>
+      <polygon points="598,128 620,141 620,166 598,179 576,166 576,141"/>
+      <circle cx="598" cy="52" r="4" fill="#228B55" fill-opacity="0.4"/>
+      <circle cx="620" cy="90" r="4" fill="#228B55" fill-opacity="0.4"/>
+      <circle cx="598" cy="128" r="4" fill="#228B55" fill-opacity="0.4"/>
+    </g>
+
+    <!-- ─── VERDAEZ LOGO on building ─── -->
+    <rect x="223" y="340" width="42" height="18" rx="4" fill="rgba(255,255,255,0.08)"/>
+    <text x="244" y="353" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" font-weight="800" fill="rgba(201,235,218,0.6)" letter-spacing="1">VERDAEZ</text>
+
+  </g>
+
+  <!-- ─── PRODUCT OUTPUT ICONS (floating bottom row) ─── -->
+  <g filter="url(#glow)">
+    <!-- Fuel Pellets -->
+    <rect x="95" y="455" width="70" height="55" rx="12" fill="#155833" opacity="0.92"/>
+    <rect x="97" y="457" width="66" height="51" rx="10" fill="#1A7042" opacity="0.5"/>
+    <text x="130" y="474" text-anchor="middle" font-family="Outfit" font-size="16" fill="#74C39A">🔥</text>
+    <text x="130" y="487" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">FUEL</text>
+    <text x="130" y="497" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">PELLETS</text>
+
+    <!-- Biochar -->
+    <rect x="175" y="455" width="70" height="55" rx="12" fill="#0F4226" opacity="0.92"/>
+    <rect x="177" y="457" width="66" height="51" rx="10" fill="#155833" opacity="0.5"/>
+    <text x="210" y="474" text-anchor="middle" font-family="Outfit" font-size="16" fill="#3DA872">⬛</text>
+    <text x="210" y="487" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">BIOCHAR</text>
+    <text x="210" y="497" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#74C39A">CO₂−</text>
+
+    <!-- Pyrolysis Oil -->
+    <rect x="255" y="455" width="70" height="55" rx="12" fill="#155833" opacity="0.92"/>
+    <rect x="257" y="457" width="66" height="51" rx="10" fill="#228B55" opacity="0.3"/>
+    <text x="290" y="474" text-anchor="middle" font-family="Outfit" font-size="16" fill="#74C39A">💧</text>
+    <text x="290" y="487" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">PYROLYSIS</text>
+    <text x="290" y="497" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">OIL</text>
+
+    <!-- Carbon Materials -->
+    <rect x="335" y="455" width="70" height="55" rx="12" fill="#0A2C1A" opacity="0.95"/>
+    <rect x="337" y="457" width="66" height="51" rx="10" fill="#0F4226" opacity="0.5"/>
+    <text x="370" y="474" text-anchor="middle" font-family="Outfit" font-size="16" fill="#AADCC0">⬡</text>
+    <text x="370" y="487" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">CARBON</text>
+    <text x="370" y="497" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">MATERIALS</text>
+
+    <!-- Fertilizer -->
+    <rect x="415" y="455" width="70" height="55" rx="12" fill="#155833" opacity="0.92"/>
+    <rect x="417" y="457" width="66" height="51" rx="10" fill="#3DA872" opacity="0.2"/>
+    <text x="450" y="474" text-anchor="middle" font-family="Outfit" font-size="16" fill="#74C39A">🌿</text>
+    <text x="450" y="487" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">SLOW-REL.</text>
+    <text x="450" y="497" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#9DD6B9">FERTILIZER</text>
+
+    <!-- CO2 Impact -->
+    <rect x="495" y="455" width="70" height="55" rx="12" fill="#0F4226" opacity="0.92"/>
+    <rect x="497" y="457" width="66" height="51" rx="10" fill="#155833" opacity="0.4"/>
+    <text x="530" y="476" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="800" fill="#74C39A">CO₂</text>
+    <text x="530" y="489" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" font-weight="700" fill="#AADCC0">CLIMATE</text>
+    <text x="530" y="499" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" font-weight="700" fill="#AADCC0">IMPACT</text>
+  </g>
+
+  <!-- Top subtle noise overlay -->
+  <rect width="680" height="520" fill="rgba(242,251,245,0.02)"/>
+</svg>
